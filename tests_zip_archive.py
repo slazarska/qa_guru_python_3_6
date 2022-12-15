@@ -14,8 +14,8 @@ def test_archive_create():
         for file in file_dir:
             add_file = os.path.join(path, file)
             zip_.write(add_file, basename(add_file))
-    print(zip_.namelist())
-    assert zip_.__sizeof__() == 24
+    assert zip_.namelist() == ['test_pdf.pdf', 'test_xlsx_10.xlsx', 'viikko.csv']
+    os.remove('resources/test_archive.zip')
 
 
 def test_csv():
